@@ -7,6 +7,11 @@ import scrapy
 
 
 class SenadoresItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    url = scrapy.Field()
+    name = scrapy.Field()
+    party = scrapy.Field()
+    uf = scrapy.Field()
+    period = scrapy.Field()
+    phones = scrapy.Field()
+    email = scrapy.Field()
+    address = scrapy.Field()
