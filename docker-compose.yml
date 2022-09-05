@@ -1,0 +1,20 @@
+version: "3.3"
+
+services:
+  senators_crawler:
+    build: "."
+    command: sh -c "python -m scrapy crawl senators_spider"
+    depends_on:
+      - senators_db
+    ports:
+      - "7300:7300"
+    links:
+      - senators_db
+  senators_db:
+    image: mongo
+    restart: always
+    ports:
+      - "7399:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root_password
