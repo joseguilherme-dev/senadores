@@ -1,8 +1,11 @@
 # **Senators Webcrawler**
 
 <img src='runtime.svg'></img>
+<img src='database.svg'></img>
+<img src='docker.svg'></img>
+<img src='license.svg'></img>
 
-This is my first webcrawler ever made using **Scrapy**.
+This is my first webcrawler ever made using **Scrapy** library.
 
 It's goal is to get the following informations about each active senator of Brazil:
 
@@ -15,25 +18,22 @@ It's goal is to get the following informations about each active senator of Braz
 - Cabinet address;
 - Senator email.
 
-After that, all the data scrapped is sent to a MongoDB database.
+After that, all the data scrapped is sent to a **MongoDB** database.
 
 ---
 
-## **How to Run**
+## **How to Run:**
 
-First of all, you must have MongoDB running on your localhost.
+You need to have `docker` and `docker-compose` properly installed on your machine.
 
-You also need to install the requirements that are in the `requirements.txt` file, that should be easy with the pip command:
-
-```
-pip install -r requirements.txt
-```
-
-After that, just run the crawler with:
+That way, we can execute the senators webcrawler by simply running the following command: 
 
 ```
-scrapy crawl senators_spider
+docker-compose up
 ```
+
+It will build the crawler and Mongo docker images and right after that it launches them.
+
 
 ---
 
